@@ -9,13 +9,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Afacad-Bold.ttf" />
+    <None Remove="Fonts\Afacad-Regular.ttf" />
+    <None Remove="Images\CloseWindow.png" />
+    <None Remove="Images\MinimizeWindow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Fonts\" />
-    <Folder Include="Commands\" />
-    <Folder Include="Styles\" />
     <Folder Include="Services\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Afacad-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\Afacad-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CloseWindow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\MinimizeWindow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

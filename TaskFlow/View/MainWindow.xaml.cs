@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TaskFlow
+namespace TaskFlow.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -19,6 +19,25 @@ namespace TaskFlow
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                this.DragMove();
+            }
+            catch { }
+        }
+
+        private void Minimize_Clicked(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Close_Clicked(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

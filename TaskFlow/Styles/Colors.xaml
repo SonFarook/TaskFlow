@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  "Gray"  -->
+    <SolidColorBrush x:Key="DarkGray" Color="#798086" />
+
+    <!--  "Black"  -->
+    <SolidColorBrush x:Key="Black" Color="#424342" />
+
+    <!--  "Green"  -->
+    <SolidColorBrush x:Key="Green" Color="#556F7A" />
+
+    <!--  "Foreground Gray"  -->
+    <SolidColorBrush x:Key="LightGray" Color="#D5DFE5" />
+
+    <!--  "Red"  -->
+    <SolidColorBrush x:Key="Red" Color="#F03A47" />
+
+</ResourceDictionary>
