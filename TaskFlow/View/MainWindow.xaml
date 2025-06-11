@@ -61,6 +61,41 @@
             </Grid>
         </Grid>
 
+        <!--  Navigation Menu  -->
+        <Border
+            Grid.Row="1"
+            Width="44"
+            Height="173"
+            Margin="11,0,0,0"
+            HorizontalAlignment="Left"
+            Background="{StaticResource Green}"
+            CornerRadius="15">
+            <StackPanel Margin="0,7,0,0">
+                <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
+                    <Image Source="/Images/TasksIcon.png" />
+                </RadioButton>
+                <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
+                    <Image Source="/Images/CreateTaskIcon.png" />
+                </RadioButton>
+                <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
+                    <Image Source="/Images/PomodoroIcon.png" />
+                </RadioButton>
+                <RadioButton Style="{StaticResource MenuBtn}">
+                    <Image Source="/Images/SettingsIcon.png" />
+                </RadioButton>
+            </StackPanel>
+        </Border>
+
+        <Frame
+            Grid.Row="1"
+            Width="640"
+            Height="452"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="Transparent"
+            Focusable="False"
+            NavigationUIVisibility="Hidden" />
+
         <!--  Bottom Border  -->
         <Border
             Grid.Row="2"

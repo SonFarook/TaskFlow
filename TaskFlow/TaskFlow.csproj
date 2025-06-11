@@ -12,7 +12,11 @@
     <None Remove="Fonts\Afacad-Bold.ttf" />
     <None Remove="Fonts\Afacad-Regular.ttf" />
     <None Remove="Images\CloseWindow.png" />
+    <None Remove="Images\CreateTaskIcon.png" />
     <None Remove="Images\MinimizeWindow.png" />
+    <None Remove="Images\PomodoroIcon.png" />
+    <None Remove="Images\SettingsIcon.png" />
+    <None Remove="Images\TasksIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +34,19 @@
     <Resource Include="Images\CloseWindow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\CreateTaskIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\MinimizeWindow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PomodoroIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\SettingsIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TasksIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

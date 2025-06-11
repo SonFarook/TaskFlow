@@ -15,6 +15,7 @@ namespace TaskFlow.ViewModel
     public class MainViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        private static readonly bool _isInDesignMode = System.ComponentModel.DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject());
 
         private string _currentTime;
         public string CurrentTime
@@ -45,7 +46,10 @@ namespace TaskFlow.ViewModel
 
         public MainViewModel()
         {
-            InitAndStartTimer();
+            if (!_isInDesignMode) 
+            {
+                InitAndStartTimer();
+            }
         }
 
         private void InitAndStartTimer()
