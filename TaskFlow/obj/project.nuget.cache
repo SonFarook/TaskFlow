@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NAnRrgFtFDw=",
+  "dgSpecHash": "X4xVAqyAqRw=",
   "success": true,
   "projectFilePath": "C:\\Users\\Ömer\\source\\repos\\TaskFlow\\TaskFlow\\TaskFlow.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Ömer\\.nuget\\packages\\extended.wpf.toolkit\\4.7.25104.5739\\extended.wpf.toolkit.4.7.25104.5739.nupkg.sha512"
+  ],
   "logs": []
 }

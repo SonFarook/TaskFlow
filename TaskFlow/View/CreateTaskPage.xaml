@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TaskFlow.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
     Title="CreateTaskPage"
     d:DesignHeight="452"
     d:DesignWidth="640"
@@ -17,14 +18,30 @@
         CornerRadius="15">
         <StackPanel>
             <TextBlock
-                Margin="0,9,0,0"
+                Margin="0,9,0,15"
                 HorizontalAlignment="Center"
                 FontSize="32"
                 Text="Create Task" />
-            <TextBox />
-            <ComboBox />
-            <TextBox />
-            <TextBox />
+            <xctk:WatermarkTextBox Margin="0,0,0,20" Style="{StaticResource StandardTextBox}">
+                <xctk:WatermarkTextBox.Watermark>
+                    <TextBlock Text="Name" />
+                </xctk:WatermarkTextBox.Watermark>
+            </xctk:WatermarkTextBox>
+            <ComboBox Margin="0,0,0,20" />
+            <xctk:WatermarkTextBox
+                Margin="0,0,0,20"
+                Focusable="False"
+                IsReadOnly="True"
+                Style="{StaticResource ReadOnlyTextBox}">
+                <xctk:WatermarkTextBox.Watermark>
+                    <TextBlock Text="Date" />
+                </xctk:WatermarkTextBox.Watermark>
+            </xctk:WatermarkTextBox>
+            <xctk:WatermarkTextBox Margin="0,0,0,20" Style="{StaticResource StandardTextBox}">
+                <xctk:WatermarkTextBox.Watermark>
+                    <TextBlock Text="Time (HH/MM)" />
+                </xctk:WatermarkTextBox.Watermark>
+            </xctk:WatermarkTextBox>
             <Button Content="Submit" Style="{StaticResource SubmitBtn}" />
         </StackPanel>
     </Border>
