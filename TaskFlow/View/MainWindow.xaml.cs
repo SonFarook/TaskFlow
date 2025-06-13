@@ -39,5 +39,12 @@ namespace TaskFlow.View
         {
             this.Close();
         }
+
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {   
+            //temporary
+            CreateTaskPage createTaskPage = new CreateTaskPage();
+            MainFrame.Navigate(createTaskPage);
+        }
     }
 }

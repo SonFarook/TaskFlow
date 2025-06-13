@@ -74,7 +74,7 @@
                 <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
                     <Image Source="/Images/TasksIcon.png" />
                 </RadioButton>
-                <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
+                <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}" Click="RadioButton_Click">
                     <Image Source="/Images/CreateTaskIcon.png" />
                 </RadioButton>
                 <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
@@ -87,6 +87,7 @@
         </Border>
 
         <Frame
+            Name="MainFrame"
             Grid.Row="1"
             Width="640"
             Height="452"
