@@ -47,3 +47,5 @@ C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\refint\Ta
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\TaskFlow.pdb
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\TaskFlow.genruntimeconfig.cache
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\ref\TaskFlow.dll
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\ComboBoxes.baml
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll

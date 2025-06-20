@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\App.xaml
-7434333721
+8-2085746356
 
-9196155301
-203-1788736672
-Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\TextBlocks.xaml;Styles\TextBoxes.xaml;View\CreateTaskPage.xaml;View\MainWindow.xaml;
+10-354446388
+2041614784843
+Styles\Buttons.xaml;Styles\Colors.xaml;Styles\ComboBoxes.xaml;Styles\Fonts.xaml;Styles\TextBlocks.xaml;Styles\TextBoxes.xaml;View\CreateTaskPage.xaml;View\MainWindow.xaml;
 
-False
+True
 

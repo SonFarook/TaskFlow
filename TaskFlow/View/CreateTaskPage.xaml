@@ -3,45 +3,68 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:TaskFlow.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:TaskFlow.ViewModel"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
     Title="CreateTaskPage"
     d:DesignHeight="452"
     d:DesignWidth="640"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <vm:CreateTaskViewModel />
+    </Page.DataContext>
 
     <Border
         Width="203"
-        Height="287"
+        Height="335"
         Background="{StaticResource Black}"
         CornerRadius="15">
         <StackPanel>
             <TextBlock
-                Margin="0,9,0,15"
+                Margin="0,9,0,5"
                 HorizontalAlignment="Center"
                 FontSize="32"
                 Text="Create Task" />
-            <xctk:WatermarkTextBox Margin="0,0,0,20" Style="{StaticResource StandardTextBox}">
-                <xctk:WatermarkTextBox.Watermark>
-                    <TextBlock Text="Name" />
-                </xctk:WatermarkTextBox.Watermark>
-            </xctk:WatermarkTextBox>
-            <ComboBox Margin="0,0,0,20" />
-            <xctk:WatermarkTextBox
-                Margin="0,0,0,20"
-                Focusable="False"
-                IsReadOnly="True"
-                Style="{StaticResource ReadOnlyTextBox}">
-                <xctk:WatermarkTextBox.Watermark>
-                    <TextBlock Text="Date" />
-                </xctk:WatermarkTextBox.Watermark>
-            </xctk:WatermarkTextBox>
-            <xctk:WatermarkTextBox Margin="0,0,0,20" Style="{StaticResource StandardTextBox}">
-                <xctk:WatermarkTextBox.Watermark>
-                    <TextBlock Text="Time (HH/MM)" />
-                </xctk:WatermarkTextBox.Watermark>
-            </xctk:WatermarkTextBox>
+            <TextBlock Margin="35,0,0,2" Text="Name" />
+            <TextBox Margin="0,0,0,14" Style="{StaticResource StandardTextBox}" />
+            <TextBlock Margin="35,0,0,2" Text="Priority" />
+            <ComboBox Margin="0,0,0,14">
+                <ComboBoxItem>
+                    <TextBlock Foreground="#41E2BA" Text="Low" />
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Foreground="#F7E733" Text="Mid" />
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Foreground="#F03A47" Text="High" />
+                </ComboBoxItem>
+            </ComboBox>
+            <TextBlock Margin="35,0,0,2" Text="Date" />
+            <Border
+                Width="141"
+                Height="24"
+                Margin="0,0,0,14"
+                Background="{StaticResource Green}"
+                BorderBrush="{StaticResource LightGray}"
+                BorderThickness="0.5"
+                CornerRadius="10">
+                <Grid>
+                    <TextBlock
+                        Margin="5,0,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding DateText}" />
+                    <DatePicker
+                        Width="30"
+                        HorizontalAlignment="Right"
+                        BorderBrush="Transparent"
+                        SelectedDate="{Binding SelectedDate, Mode=TwoWay}" />
+                </Grid>
+            </Border>
+            <TextBlock Margin="35,0,0,2" Text="Time (HH/MM)" />
+            <TextBox Margin="0,0,0,15" Style="{StaticResource StandardTextBox}" />
             <Button Content="Submit" Style="{StaticResource SubmitBtn}" />
         </StackPanel>
     </Border>
