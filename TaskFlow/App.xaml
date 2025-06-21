@@ -11,8 +11,9 @@
                 <ResourceDictionary Source="/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="/Styles/Buttons.xaml" />
                 <ResourceDictionary Source="/Styles/TextBlocks.xaml" />
-                <ResourceDictionary Source="/Styles/TextBoxes.xaml" />
-                <ResourceDictionary Source="/Styles/ComboBoxes.xaml" />
+                <ResourceDictionary Source="/Styles/TextBox.xaml" />
+                <ResourceDictionary Source="/Styles/ComboBox.xaml" />
+                <ResourceDictionary Source="/Styles/DatePicker.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

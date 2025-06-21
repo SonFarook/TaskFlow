@@ -32,13 +32,13 @@
             <TextBlock Margin="35,0,0,2" Text="Priority" />
             <ComboBox Margin="0,0,0,14">
                 <ComboBoxItem>
-                    <TextBlock Foreground="#41E2BA" Text="Low" />
+                    <TextBlock Foreground="{StaticResource LightGreen}" Text="Low" />
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <TextBlock Foreground="#F7E733" Text="Mid" />
+                    <TextBlock Foreground="{StaticResource Yellow}" Text="Mid" />
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <TextBlock Foreground="#F03A47" Text="High" />
+                    <TextBlock Foreground="{StaticResource Red}" Text="High" />
                 </ComboBoxItem>
             </ComboBox>
             <TextBlock Margin="35,0,0,2" Text="Date" />
