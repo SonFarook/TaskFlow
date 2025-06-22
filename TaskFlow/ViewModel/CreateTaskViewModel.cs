@@ -9,25 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 using TaskFlow.Commands;
+using System.Globalization;
 
 namespace TaskFlow.ViewModel
 {
     public class CreateTaskViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private string _dateText;
-        public string DateText 
-        {
-            get => _dateText;
-            set
-            {
-                if (_dateText != value) 
-                {
-                    _dateText = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+        //The date from datepicker
         private string _selectedDate;
         public string SelectedDate 
         {
@@ -37,20 +26,15 @@ namespace TaskFlow.ViewModel
                 if (_selectedDate != value) 
                 {
                     _selectedDate = value;
+                    DateTime dt = DateTime.Parse(_selectedDate);
+                    _selectedDate = dt.ToString("dd.MM.yyyy");
                     OnPropertyChanged();
                 }
             }
         }
-        public ICommand DatePickerSelectionChanged { get; } 
+
         public CreateTaskViewModel()
         {
-            DatePickerSelectionChanged = new RelayCommand(DatePickerSelectionChanged_Executed);
-        }
-
-        private void DatePickerSelectionChanged_Executed()
-        {
-            // convert selectedDate
-            // bind to selectionchanged of datepicker
         }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
