@@ -18,7 +18,7 @@
 
     <Border
         Width="203"
-        Height="335"
+        Height="360"
         Background="{StaticResource Black}"
         CornerRadius="15">
         <StackPanel>
@@ -28,9 +28,13 @@
                 FontSize="32"
                 Text="Create Task" />
             <TextBlock Margin="35,0,0,2" Text="Name" />
-            <TextBox Margin="0,0,0,14" Style="{StaticResource StandardTextBox}" />
+            <TextBox
+                Margin="0,0,0,14"
+                Style="{StaticResource StandardTextBox}"
+                Text="{Binding NameText, Mode=TwoWay}" />
+            <TextBlock Style="{StaticResource ValidationTextBlock}" Text="{Binding NameErrorMsg}" />
             <TextBlock Margin="35,0,0,2" Text="Priority" />
-            <ComboBox Margin="0,0,0,14">
+            <ComboBox Margin="0,0,0,14" SelectedItem="{Binding SelectedPriority, Mode=TwoWay}">
                 <ComboBoxItem>
                     <TextBlock Foreground="{StaticResource LightGreen}" Text="Low" />
                 </ComboBoxItem>
@@ -41,6 +45,7 @@
                     <TextBlock Foreground="{StaticResource Red}" Text="High" />
                 </ComboBoxItem>
             </ComboBox>
+            <TextBlock Style="{StaticResource ValidationTextBlock}" Text="{Binding PriorityErrorMsg}" />
             <TextBlock Margin="35,0,0,2" Text="Date" />
             <Border
                 Width="141"
@@ -63,15 +68,21 @@
                         SelectedDate="{Binding SelectedDate, Mode=TwoWay}" />
                 </Grid>
             </Border>
+            <TextBlock Style="{StaticResource ValidationTextBlock}" Text="{Binding DateErrorMsg}" />
             <TextBlock Margin="35,0,0,2" Text="Time (HH:MM)" />
             <TextBox
                 Margin="0,0,0,15"
-                PreviewTextInput="TextBox_PreviewTextInput"
                 KeyDown="TextBox_KeyDown"
                 MaxLength="5"
+                PreviewTextInput="TextBox_PreviewTextInput"
                 Style="{StaticResource StandardTextBox}"
+                Text="{Binding EnteredText, Mode=TwoWay}"
                 TextChanged="TextBox_TextChanged" />
-            <Button Content="Submit" Style="{StaticResource SubmitBtn}" />
+            <TextBlock Style="{StaticResource ValidationTextBlock}" Text="{Binding TimeErrorMsg}" />
+            <Button
+                Command="{Binding SubmitButtonClicked}"
+                Content="Submit"
+                Style="{StaticResource SubmitBtn}" />
         </StackPanel>
     </Border>
 </Page>

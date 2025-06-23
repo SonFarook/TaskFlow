@@ -4,4 +4,12 @@
         <Setter Property="FontFamily" Value="{StaticResource Afacad}" />
         <Setter Property="FontSize" Value="15" />
     </Style>
+
+    <Style x:Key="ValidationTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource Afacad}" />
+        <Setter Property="Foreground" Value="{StaticResource Red}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="0,-16,0,0" />
+    </Style>
 </ResourceDictionary>
