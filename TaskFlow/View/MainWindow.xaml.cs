@@ -46,5 +46,12 @@ namespace TaskFlow.View
             CreateTaskPage createTaskPage = new CreateTaskPage();
             MainFrame.Navigate(createTaskPage);
         }
+
+        private void RadioButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            //temporary
+            TasksPage tp = new TasksPage();
+            MainFrame.Navigate(tp);
+        }
     }
 }

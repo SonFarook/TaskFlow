@@ -18,15 +18,15 @@ namespace TaskFlow.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private string _enteredText;
-        public string EnteredText 
+        private string _enteredName;
+        public string EnteredName 
         {
-            get => _enteredText;
+            get => _enteredName;
             set
             {
-                if(_enteredText != value)
+                if(_enteredName != value)
                 {
-                    _enteredText = value;
+                    _enteredName = value;
                     OnPropertyChanged();
                 }
             }
@@ -79,11 +79,14 @@ namespace TaskFlow.ViewModel
             get => _selectedDate;
             set
             {
-                if (_selectedDate != value)
+                if(_selectedDate != value)
                 {
                     _selectedDate = value;
-                    DateTime dt = DateTime.Parse(_selectedDate);
-                    _selectedDate = dt.ToString("dd.MM.yyyy");
+                    if (DateTime.TryParse(_selectedDate, out var dt))
+                        _selectedDate = dt.ToString("dd.MM.yyyy");
+                    else
+                        _selectedDate = string.Empty;
+
                     OnPropertyChanged();
                 }
             }
@@ -130,28 +133,70 @@ namespace TaskFlow.ViewModel
                 }
             }
         }
+        private string _validationSuccessMsg;
+        public string ValidationSuccessMsg 
+        {
+            get => _validationSuccessMsg;
+            set
+            {
+                if(_validationSuccessMsg != value)
+                {
+                    _validationSuccessMsg = value;
+                    OnPropertyChanged();
+                }
+
+            }
+        }
 
         public ICommand SubmitButtonClicked { get; set; }
         public CreateTaskViewModel()
         {
             SubmitButtonClicked = new RelayCommand(SubmitButtonClicked_Executed);
         }
+        private string Validate(string value, string errorMessage) => string.IsNullOrWhiteSpace(value) ? errorMessage : string.Empty;
+        private void ValidateDateTime()
+        {
+            if (!string.IsNullOrEmpty(EnteredTime))
+                TimeErrorMsg = TimeSpan.TryParse(EnteredTime, out _) ? string.Empty : "Please enter a valid time.";
+
+            if (!string.IsNullOrEmpty(SelectedDate))
+                DateErrorMsg = DateTime.TryParseExact(SelectedDate, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out _) ? string.Empty : "Please enter a valid date.";
+ 
+            if (string.IsNullOrEmpty(TimeErrorMsg) && string.IsNullOrEmpty(DateErrorMsg))
+            {
+                if(DateTime.TryParseExact($"{SelectedDate} {EnteredTime}", "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime selectedDateTime))
+                {
+                    if (selectedDateTime.Date < DateTime.Now.Date)
+                        DateErrorMsg = "Selected date is in the past.";
+
+                    else if (selectedDateTime < DateTime.Now)
+                        TimeErrorMsg = "Entered time is in the past.";
+                }
+            }
+        }
         private void ValidateInputs()
         {
-            NameErrorMsg = Validate(EnteredText, "Please enter a name.");
+            NameErrorMsg = Validate(EnteredName, "Please enter a name.");
             PriorityErrorMsg = Validate(SelectedPriority?.ToString(), "Please select a priority");
             DateErrorMsg = Validate(SelectedDate, "Please enter a date.");
             TimeErrorMsg = Validate(EnteredTime, "Please enter a time.");
+
+            ValidateDateTime();
         }
-        private string Validate(string value, string errorMessage) => string.IsNullOrWhiteSpace(value) ? errorMessage : string.Empty;
         private bool IsValid()
         {
-            string temp = string.Empty;
             if (new string[] {NameErrorMsg, PriorityErrorMsg, DateErrorMsg, TimeErrorMsg}.All(string.IsNullOrEmpty))
                 return true;
             
             else
                 return false;
+        }
+        private void ClearInputs()
+        {
+            EnteredName = 
+            EnteredTime = 
+            SelectedDate = string.Empty;
+            SelectedPriority = null;
         }
         private void SubmitButtonClicked_Executed()
         {
@@ -160,6 +205,8 @@ namespace TaskFlow.ViewModel
             if (IsValid()) 
             {
                 // Create the Task
+                ClearInputs();
+                ValidationSuccessMsg = "Task created successfully.";
             }
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

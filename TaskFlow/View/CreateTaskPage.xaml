@@ -31,8 +31,8 @@
             <TextBox
                 Margin="0,0,0,14"
                 Style="{StaticResource StandardTextBox}"
-                Text="{Binding NameText, Mode=TwoWay}" />
-            <TextBlock Style="{StaticResource ValidationTextBlock}" Text="{Binding NameErrorMsg}" />
+                Text="{Binding EnteredName, Mode=TwoWay}" />
+            <TextBlock Style="{StaticResource ValidationTxt}" Text="{Binding NameErrorMsg}" />
             <TextBlock Margin="35,0,0,2" Text="Priority" />
             <ComboBox Margin="0,0,0,14" SelectedItem="{Binding SelectedPriority, Mode=TwoWay}">
                 <ComboBoxItem>
@@ -45,7 +45,7 @@
                     <TextBlock Foreground="{StaticResource Red}" Text="High" />
                 </ComboBoxItem>
             </ComboBox>
-            <TextBlock Style="{StaticResource ValidationTextBlock}" Text="{Binding PriorityErrorMsg}" />
+            <TextBlock Style="{StaticResource ValidationTxt}" Text="{Binding PriorityErrorMsg}" />
             <TextBlock Margin="35,0,0,2" Text="Date" />
             <Border
                 Width="141"
@@ -68,7 +68,7 @@
                         SelectedDate="{Binding SelectedDate, Mode=TwoWay}" />
                 </Grid>
             </Border>
-            <TextBlock Style="{StaticResource ValidationTextBlock}" Text="{Binding DateErrorMsg}" />
+            <TextBlock Style="{StaticResource ValidationTxt}" Text="{Binding DateErrorMsg}" />
             <TextBlock Margin="35,0,0,2" Text="Time (HH:MM)" />
             <TextBox
                 Margin="0,0,0,15"
@@ -76,13 +76,14 @@
                 MaxLength="5"
                 PreviewTextInput="TextBox_PreviewTextInput"
                 Style="{StaticResource StandardTextBox}"
-                Text="{Binding EnteredText, Mode=TwoWay}"
+                Text="{Binding EnteredTime, Mode=TwoWay}"
                 TextChanged="TextBox_TextChanged" />
-            <TextBlock Style="{StaticResource ValidationTextBlock}" Text="{Binding TimeErrorMsg}" />
+            <TextBlock Style="{StaticResource ValidationTxt}" Text="{Binding TimeErrorMsg}" />
             <Button
                 Command="{Binding SubmitButtonClicked}"
                 Content="Submit"
                 Style="{StaticResource SubmitBtn}" />
+            <TextBlock Style="{StaticResource ValidationSuccessfulTxt}" Text="{Binding ValidationSuccessMsg}" />
         </StackPanel>
     </Border>
 </Page>

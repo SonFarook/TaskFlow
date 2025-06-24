@@ -50,3 +50,5 @@ C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\Microsoft
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\ComboBox.baml
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\DatePicker.baml
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\TextBox.baml
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\View\TasksPage.g.cs
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\View\TasksPage.baml

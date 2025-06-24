@@ -7,12 +7,28 @@
       "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\viewmodel\\createtaskviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\styles\\textblocks.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\styles\\textblocks.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\view\\createtaskpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\createtaskpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\view\\createtaskpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\createtaskpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\styles\\textblocks.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\styles\\textblocks.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\view\\taskspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\taskspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +38,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CreateTaskPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\CreateTaskPage.xaml.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\View\\CreateTaskPage.xaml.cs",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\CreateTaskPage.xaml.cs",
+              "RelativeToolTip": "TaskFlow\\View\\CreateTaskPage.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAFoAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T11:44:15.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateTaskViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\CreateTaskViewModel.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\ViewModel\\CreateTaskViewModel.cs",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\CreateTaskViewModel.cs",
+              "RelativeToolTip": "TaskFlow\\ViewModel\\CreateTaskViewModel.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAiwMcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T11:09:10.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "TaskFlow\\View\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\MainWindow.xaml",
+              "RelativeToolTip": "TaskFlow\\View\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-24T11:07:51.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\View\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\MainWindow.xaml.cs",
+              "RelativeToolTip": "TaskFlow\\View\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwDUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T11:07:47.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TasksPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\TasksPage.xaml",
+              "RelativeDocumentMoniker": "TaskFlow\\View\\TasksPage.xaml",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\TasksPage.xaml",
+              "RelativeToolTip": "TaskFlow\\View\\TasksPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-24T11:07:39.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TextBlocks.xaml",
               "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Styles\\TextBlocks.xaml",
               "RelativeDocumentMoniker": "TaskFlow\\Styles\\TextBlocks.xaml",
@@ -38,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CreateTaskPage.xaml",
               "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\CreateTaskPage.xaml",
               "RelativeDocumentMoniker": "TaskFlow\\View\\CreateTaskPage.xaml",
@@ -46,19 +125,6 @@
               "RelativeToolTip": "TaskFlow\\View\\CreateTaskPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-06-21T06:10:33.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateTaskViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\CreateTaskViewModel.cs",
-              "RelativeDocumentMoniker": "TaskFlow\\ViewModel\\CreateTaskViewModel.cs",
-              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\CreateTaskViewModel.cs",
-              "RelativeToolTip": "TaskFlow\\ViewModel\\CreateTaskViewModel.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwGgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T16:03:57.866Z",
               "EditorCaption": ""
             }
           ]
