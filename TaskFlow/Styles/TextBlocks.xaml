@@ -19,4 +19,31 @@
         <Setter Property="Foreground" Value="{StaticResource LightGreen}" />
         <Setter Property="Margin" Value="0,5,0,0" />
     </Style>
+
+    <Style x:Key="TasksTxt" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource LightGray}" />
+        <Setter Property="FontFamily" Value="{StaticResource Afacad}" />
+        <Setter Property="FontSize" Value="15" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsCompleted}" Value="True">
+                <Setter Property="TextDecorations" Value="Strikethrough" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style
+        x:Key="PriorityForeground"
+        BasedOn="{StaticResource TasksTxt}"
+        TargetType="TextBlock">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Priority}" Value="High">
+                <Setter Property="Foreground" Value="{StaticResource Red}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Priority}" Value="Mid">
+                <Setter Property="Foreground" Value="{StaticResource Yellow}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Priority}" Value="Low">
+                <Setter Property="Foreground" Value="{StaticResource LightGreen}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

@@ -52,3 +52,6 @@ C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\Da
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\TextBox.baml
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\View\TasksPage.g.cs
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\View\TasksPage.baml
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\ListBox.baml
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\CheckBox.baml
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\ScrollBar.baml

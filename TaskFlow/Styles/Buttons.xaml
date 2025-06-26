@@ -123,4 +123,21 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <!--  Delete Task Button  -->
+    <Style
+        x:Key="DeleteTaskBtn"
+        BasedOn="{StaticResource MinimizeWindowBtn}"
+        TargetType="Button">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Opacity" Value="0.9" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value="0.85" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

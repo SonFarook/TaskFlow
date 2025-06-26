@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="CheckBox">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource LightGray}" />
+        <Setter Property="Foreground" Value="{StaticResource LightGray}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="Transparent"
+                        BorderThickness="0">
+                        <StackPanel Orientation="Horizontal">
+                            <Border
+                                x:Name="CheckboxBorder"
+                                Width="15"
+                                Height="15"
+                                VerticalAlignment="Center"
+                                Background="Transparent"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="3">
+                                <Path
+                                    x:Name="CheckPath"
+                                    Width="10"
+                                    Height="10"
+                                    HorizontalAlignment="Center"
+                                    Stretch="Uniform"
+                                    VerticalAlignment="Center"
+                                    Data="M 460.5 73.4 C 450 76.7 449.6 77 318.5 190.6 L 187 322 L 127.5 262.5 C 72.2 207.4 67.5 203 61.3 200.1 C 45.4 192.7 28.5 194.9 16.1 200.4 C 6.1 209.4 1.2 223.4 3.6 236.8 C 6.1 250 4.5 248.3 87.5 330.8 C 160.1 403.2 164.6 407.5 170.7 410.2 C 178.5 413.6 189 414.6 195.9 412.7 C 208.1 409.4 202.9 413.3 358.8 257.4 C 520.2 95.8 511 105.9 513.5 91.6 C 516.9 71.7 504.6 52.5 484.3 46.3 C 478.7 44.6 468.5 44.6 460.5 46.3 Z"
+                                    Fill="Transparent" />
+                            </Border>
+                            <ContentPresenter />
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckPath" Property="Fill" Value="{StaticResource LightGray}" />
+                            <Setter TargetName="CheckboxBorder" Property="Background" Value="{StaticResource Green}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="CheckPath" Property="Fill" Value="Transparent" />
+                            <Setter TargetName="CheckboxBorder" Property="Background" Value="Transparent" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

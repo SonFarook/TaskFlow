@@ -5,9 +5,114 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TaskFlow.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:TaskFlow.ViewModel"
     Title="TasksPage"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="452"
+    d:DesignWidth="640"
     mc:Ignorable="d">
-    <Grid />
+    <Page.DataContext>
+        <vm:TasksViewModel />
+    </Page.DataContext>
+    <Border
+        Width="586"
+        Height="391"
+        Background="{StaticResource Black}"
+        CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Row="0"
+                Margin="0,9,0,25"
+                HorizontalAlignment="Center"
+                FontSize="32"
+                Text="Tasks" />
+            <Grid Grid.Row="1" Margin="55,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="53" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="1"
+                    FontSize="17"
+                    Foreground="{StaticResource Green}"
+                    Text="Name" />
+                <TextBlock
+                    Grid.Column="2"
+                    FontSize="17"
+                    Foreground="{StaticResource Green}"
+                    Text="Date" />
+                <TextBlock
+                    Grid.Column="3"
+                    FontSize="17"
+                    Foreground="{StaticResource Green}"
+                    Text="Time" />
+                <TextBlock
+                    Grid.Column="4"
+                    FontSize="17"
+                    Foreground="{StaticResource Green}"
+                    Text="Priority" />
+            </Grid>
+            <ListBox
+                Grid.Row="2"
+                Width="476"
+                Margin="0,0,0,15"
+                ItemContainerStyle="{StaticResource TaskListItem}"
+                ItemsSource="{Binding Tasks}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="170" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="20" />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox
+                                Grid.Column="0"
+                                Margin="0,4,0,0"
+                                VerticalAlignment="Top"
+                                IsChecked="{Binding IsCompleted, Mode=TwoWay}" />
+                            <TextBlock
+                                Grid.Column="1"
+                                HorizontalAlignment="Left"
+                                Style="{StaticResource PriorityForeground}"
+                                Text="{Binding Name}"
+                                TextWrapping="Wrap" />
+                            <TextBlock
+                                Grid.Column="2"
+                                HorizontalAlignment="Left"
+                                Style="{StaticResource TasksTxt}"
+                                Text="{Binding Date}" />
+                            <TextBlock
+                                Grid.Column="3"
+                                HorizontalAlignment="Left"
+                                Style="{StaticResource TasksTxt}"
+                                Text="{Binding Time}" />
+                            <TextBlock
+                                Grid.Column="4"
+                                HorizontalAlignment="Left"
+                                Style="{StaticResource PriorityForeground}"
+                                Text="{Binding Priority}" />
+                            <Button
+                                Grid.Column="5"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Style="{StaticResource DeleteTaskBtn}">
+                                <Image Source="/Images/DeleteTaskIcon.png" />
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Border>
 </Page>

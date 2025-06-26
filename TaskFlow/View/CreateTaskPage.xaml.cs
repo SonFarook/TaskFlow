@@ -91,9 +91,7 @@ namespace TaskFlow.View
         private void EnforceMaxMinute(TextBox textBox, string[] time)
         {
             if(time.Length > 1 && int.TryParse(time[1], out int minuteDigits) && minuteDigits > 59)
-            {
                 SetTextAndMoveCaret(textBox, time[0] + ":59");
-            }
         }
         private void SetTextAndMoveCaret(TextBox textBox, string newText)
         {

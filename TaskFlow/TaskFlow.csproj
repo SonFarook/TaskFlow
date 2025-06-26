@@ -13,6 +13,7 @@
     <None Remove="Fonts\Afacad-Regular.ttf" />
     <None Remove="Images\CloseWindow.png" />
     <None Remove="Images\CreateTaskIcon.png" />
+    <None Remove="Images\DeleteTaskIcon.png" />
     <None Remove="Images\MinimizeWindow.png" />
     <None Remove="Images\PomodoroIcon.png" />
     <None Remove="Images\SettingsIcon.png" />
@@ -20,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
@@ -40,6 +40,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\CreateTaskIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\DeleteTaskIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\MinimizeWindow.png">

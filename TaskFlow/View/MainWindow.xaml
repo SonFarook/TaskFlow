@@ -71,10 +71,16 @@
             Background="{StaticResource Green}"
             CornerRadius="15">
             <StackPanel Margin="0,7,0,0">
-                <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}" Click="RadioButton_Click_1">
+                <RadioButton
+                    Margin="0,0,0,5"
+                    Click="RadioButton_Click_1"
+                    Style="{StaticResource MenuBtn}">
                     <Image Source="/Images/TasksIcon.png" />
                 </RadioButton>
-                <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}" Click="RadioButton_Click">
+                <RadioButton
+                    Margin="0,0,0,5"
+                    Click="RadioButton_Click"
+                    Style="{StaticResource MenuBtn}">
                     <Image Source="/Images/CreateTaskIcon.png" />
                 </RadioButton>
                 <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
@@ -125,7 +131,9 @@
                     Width="39"
                     FontWeight="Bold"
                     Text="{Binding CurrentTime}" />
-                <TextBlock Width="69" Text="{Binding CurrentDate}" />
+                <TextBlock
+                    Width="69"
+                    Text="{Binding CurrentDate}" />
             </StackPanel>
         </Grid>
     </Grid>
