@@ -31,7 +31,23 @@
         </Style.Triggers>
     </Style>
     <Style
-        x:Key="PriorityForeground"
+        x:Key="CreateTaskPriorityText"
+        BasedOn="{StaticResource TasksTxt}"
+        TargetType="TextBlock">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding}" Value="High">
+                <Setter Property="Foreground" Value="{StaticResource Red}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding}" Value="Mid">
+                <Setter Property="Foreground" Value="{StaticResource Yellow}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding}" Value="Low">
+                <Setter Property="Foreground" Value="{StaticResource LightGreen}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style
+        x:Key="TasksPriorityText"
         BasedOn="{StaticResource TasksTxt}"
         TargetType="TextBlock">
         <Style.Triggers>

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Input;
 using TaskFlow.Commands;
-using System.Globalization;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using CommunityToolkit.Mvvm.Messaging;
+using TaskFlow.Model;
+using System.Collections.ObjectModel;
 
 namespace TaskFlow.ViewModel
 {
@@ -44,7 +39,10 @@ namespace TaskFlow.ViewModel
                 }
             }
         }
-
+        public ObservableCollection<string> Priorities { get; } = new()
+        {
+            "Low", "Mid", "High"
+        };
         private object _selectedPriority;
         public object SelectedPriority 
         { 
@@ -198,13 +196,22 @@ namespace TaskFlow.ViewModel
             SelectedDate = string.Empty;
             SelectedPriority = null;
         }
+        private void CreateTask()
+        {
+            var task = new TaskModel(EnteredName, SelectedDate, EnteredTime, SelectedPriority.ToString());
+
+            System.Diagnostics.Debug.WriteLine(task.Priority);
+            
+            WeakReferenceMessenger.Default.Send(new TaskCreatedMessage(task));
+        }
         private void SubmitButtonClicked_Executed()
         {
             ValidateInputs();
 
-            if (IsValid()) 
+            if(IsValid())
             {
-                // Create the Task
+                CreateTask();
+
                 ClearInputs();
                 ValidationSuccessMsg = "Task created successfully.";
             }

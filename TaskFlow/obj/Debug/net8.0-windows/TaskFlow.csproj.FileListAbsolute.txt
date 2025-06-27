@@ -55,3 +55,6 @@ C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\View\Task
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\ListBox.baml
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\CheckBox.baml
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\ScrollBar.baml
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll

@@ -1,13 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TaskFlow.View
 {
@@ -41,17 +34,16 @@ namespace TaskFlow.View
         }
 
         private void RadioButton_Click(object sender, RoutedEventArgs e)
-        {   
-            //temporary
-            CreateTaskPage createTaskPage = new CreateTaskPage();
+        {
+
+            var createTaskPage = App.ServiceProvider.GetService<CreateTaskPage>();
             MainFrame.Navigate(createTaskPage);
         }
 
         private void RadioButton_Click_1(object sender, RoutedEventArgs e)
         {
-            //temporary
-            TasksPage tp = new TasksPage();
-            MainFrame.Navigate(tp);
+            var tasksPage = App.ServiceProvider.GetService<TasksPage>();
+            MainFrame.Navigate(tasksPage);
         }
     }
 }

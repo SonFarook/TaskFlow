@@ -5,14 +5,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TaskFlow.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:TaskFlow.ViewModel"
     Title="TasksPage"
     d:DesignHeight="452"
     d:DesignWidth="640"
     mc:Ignorable="d">
-    <Page.DataContext>
-        <vm:TasksViewModel />
-    </Page.DataContext>
     <Border
         Width="586"
         Height="391"
@@ -84,7 +80,7 @@
                             <TextBlock
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
-                                Style="{StaticResource PriorityForeground}"
+                                Style="{StaticResource TasksPriorityText}"
                                 Text="{Binding Name}"
                                 TextWrapping="Wrap" />
                             <TextBlock
@@ -100,12 +96,14 @@
                             <TextBlock
                                 Grid.Column="4"
                                 HorizontalAlignment="Left"
-                                Style="{StaticResource PriorityForeground}"
+                                Style="{StaticResource TasksPriorityText}"
                                 Text="{Binding Priority}" />
                             <Button
                                 Grid.Column="5"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top"
+                                Command="{Binding DataContext.DeleteTaskButtonClicked, RelativeSource={RelativeSource AncestorType=ListBox}}"
+                                CommandParameter="{Binding}"
                                 Style="{StaticResource DeleteTaskBtn}">
                                 <Image Source="/Images/DeleteTaskIcon.png" />
                             </Button>

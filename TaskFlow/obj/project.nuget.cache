@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Y6UxjJzHDoc=",
+  "dgSpecHash": "vS32NHo3X0s=",
   "success": true,
   "projectFilePath": "C:\\Users\\Ömer\\source\\repos\\TaskFlow\\TaskFlow\\TaskFlow.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ömer\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\Ömer\\.nuget\\packages\\extended.wpf.toolkit\\4.7.25104.5739\\extended.wpf.toolkit.4.7.25104.5739.nupkg.sha512",
+    "C:\\Users\\Ömer\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.6\\microsoft.extensions.dependencyinjection.9.0.6.nupkg.sha512",
+    "C:\\Users\\Ömer\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.6\\microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512",
     "C:\\Users\\Ömer\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.135\\microsoft.xaml.behaviors.wpf.1.1.135.nupkg.sha512"
   ],
   "logs": []
