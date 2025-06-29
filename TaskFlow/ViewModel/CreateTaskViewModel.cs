@@ -198,9 +198,7 @@ namespace TaskFlow.ViewModel
         }
         private void CreateTask()
         {
-            var task = new TaskModel(EnteredName, SelectedDate, EnteredTime, SelectedPriority.ToString());
-
-            System.Diagnostics.Debug.WriteLine(task.Priority);
+            var task = new TaskModel(EnteredName, SelectedDate, EnteredTime, SelectedPriority.ToString(), false);
             
             WeakReferenceMessenger.Default.Send(new TaskCreatedMessage(task));
         }

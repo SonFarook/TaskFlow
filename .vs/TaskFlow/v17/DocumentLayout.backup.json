@@ -11,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\taskspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\styles\\listbox.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\styles\\listbox.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +27,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RelayCommand.cs",
-              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Commands\\RelayCommand.cs",
-              "RelativeDocumentMoniker": "TaskFlow\\Commands\\RelayCommand.cs",
-              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Commands\\RelayCommand.cs",
-              "RelativeToolTip": "TaskFlow\\Commands\\RelayCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T13:20:55.003Z",
+              "Title": "ListBox.xaml",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Styles\\ListBox.xaml",
+              "RelativeDocumentMoniker": "TaskFlow\\Styles\\ListBox.xaml",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Styles\\ListBox.xaml",
+              "RelativeToolTip": "TaskFlow\\Styles\\ListBox.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-29T15:06:36.772Z",
               "EditorCaption": ""
             },
             {
@@ -46,7 +45,7 @@
               "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\TasksPage.xaml",
               "RelativeToolTip": "TaskFlow\\View\\TasksPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-27T13:11:55.14Z",
+              "WhenOpened": "2025-06-29T13:37:26.681Z",
               "EditorCaption": ""
             },
             {
@@ -57,9 +56,9 @@
               "RelativeDocumentMoniker": "TaskFlow\\ViewModel\\TasksViewModel.cs",
               "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\TasksViewModel.cs",
               "RelativeToolTip": "TaskFlow\\ViewModel\\TasksViewModel.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA8wCkAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA6wHEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T13:10:30.095Z",
+              "WhenOpened": "2025-06-29T11:21:59.706Z",
               "EditorCaption": ""
             }
           ]

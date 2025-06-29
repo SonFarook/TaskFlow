@@ -65,7 +65,7 @@
         <Border
             Grid.Row="1"
             Width="44"
-            Height="173"
+            Height="130"
             Margin="11,0,0,0"
             HorizontalAlignment="Left"
             Background="{StaticResource Green}"
@@ -85,9 +85,6 @@
                 </RadioButton>
                 <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
                     <Image Source="/Images/PomodoroIcon.png" />
-                </RadioButton>
-                <RadioButton Style="{StaticResource MenuBtn}">
-                    <Image Source="/Images/SettingsIcon.png" />
                 </RadioButton>
             </StackPanel>
         </Border>
@@ -121,7 +118,6 @@
             <TextBlock
                 Margin="11,12,13,0"
                 FontSize="16"
-                FontWeight="Bold"
                 Text="everyday 1% better" />
 
 
@@ -131,9 +127,7 @@
                     Width="39"
                     FontWeight="Bold"
                     Text="{Binding CurrentTime}" />
-                <TextBlock
-                    Width="69"
-                    Text="{Binding CurrentDate}" />
+                <TextBlock Width="69" Text="{Binding CurrentDate}" />
             </StackPanel>
         </Grid>
     </Grid>

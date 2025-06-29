@@ -4,9 +4,10 @@
         <Setter Property="BorderBrush" Value="Transparent" />
     </Style>
 
-    <Style x:Key="TaskListItem" TargetType="ListBoxItem">
+    <Style TargetType="ListBoxItem">
         <Setter Property="Margin" Value="0,5" />
         <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Focusable" Value="False" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Template">
             <Setter.Value>

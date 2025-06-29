@@ -54,9 +54,9 @@
               "target": "Package",
               "version": "[8.4.0, )"
             },
-            "Extended.Wpf.Toolkit": {
+            "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[4.7.25104.5739, )"
+              "version": "[9.0.6, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",

@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:TaskFlow.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="TasksPage"
@@ -49,17 +50,12 @@
                     FontSize="17"
                     Foreground="{StaticResource Green}"
                     Text="Time" />
-                <TextBlock
-                    Grid.Column="4"
-                    FontSize="17"
-                    Foreground="{StaticResource Green}"
-                    Text="Priority" />
             </Grid>
             <ListBox
                 Grid.Row="2"
                 Width="476"
                 Margin="0,0,0,15"
-                ItemContainerStyle="{StaticResource TaskListItem}"
+                Focusable="False"
                 ItemsSource="{Binding Tasks}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -69,14 +65,23 @@
                                 <ColumnDefinition Width="170" />
                                 <ColumnDefinition Width="80" />
                                 <ColumnDefinition Width="50" />
-                                <ColumnDefinition Width="50" />
                                 <ColumnDefinition Width="20" />
                             </Grid.ColumnDefinitions>
                             <CheckBox
                                 Grid.Column="0"
                                 Margin="0,4,0,0"
                                 VerticalAlignment="Top"
-                                IsChecked="{Binding IsCompleted, Mode=TwoWay}" />
+                                Focusable="False"
+                                IsChecked="{Binding IsCompleted, Mode=TwoWay}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Checked">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.CheckBoxChecked, RelativeSource={RelativeSource AncestorType=ListBox}}" CommandParameter="{Binding}" />
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="Unchecked">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.CheckBoxUnChecked, RelativeSource={RelativeSource AncestorType=ListBox}}" CommandParameter="{Binding}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </CheckBox>
                             <TextBlock
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
@@ -93,11 +98,6 @@
                                 HorizontalAlignment="Left"
                                 Style="{StaticResource TasksTxt}"
                                 Text="{Binding Time}" />
-                            <TextBlock
-                                Grid.Column="4"
-                                HorizontalAlignment="Left"
-                                Style="{StaticResource TasksPriorityText}"
-                                Text="{Binding Priority}" />
                             <Button
                                 Grid.Column="5"
                                 HorizontalAlignment="Center"
