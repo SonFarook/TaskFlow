@@ -41,10 +41,8 @@ namespace TaskFlow.ViewModel
             
             WeakReferenceMessenger.Default.Register<TaskCreatedMessage>(this,(r,m) =>
             {
-                InsertTaskToDB(m.Value.Name, m.Value.Date, m.Value.Time, m.Value.Priority, 0);
-
                 //Set the TaskID of the TaskModel to the Id Value in the Db
-                m.Value.TaskID = (int)newID;
+                m.Value.TaskID = InsertTaskToDBAndGetID(m.Value.Name, m.Value.Date, m.Value.Time, m.Value.Priority, 0);
 
                 Tasks.Add(m.Value);
                 Tasks = new ObservableCollection<TaskModel>(Tasks.OrderBy(task => DateTime.ParseExact(task.Date,"dd.MM.yyyy",new CultureInfo("de-DE"))));
@@ -63,17 +61,17 @@ namespace TaskFlow.ViewModel
         {
             if (task != null) 
             {
-                UpdateIsCompletedInDB(1, task.TaskID);
+                UpdateIsCompletedInDB(true, task.TaskID);
             }
         }
         private void CheckBoxUnChecked_Executed(TaskModel task)
         {
             if (task != null)
             {
-                UpdateIsCompletedInDB(0, task.TaskID);
+                UpdateIsCompletedInDB(false, task.TaskID);
             }
         }
-        private void InsertTaskToDB(string taskName, string taskDate, string taskTime, string taskPriority, int isCompleted)
+        private int InsertTaskToDBAndGetID(string taskName, string taskDate, string taskTime, string taskPriority, int isCompleted)
         {
             using (var connection = new SqliteConnection("Data Source=app.db"))
             {
@@ -90,8 +88,7 @@ namespace TaskFlow.ViewModel
                 command.Parameters.AddWithValue("@priority", taskPriority);
                 command.Parameters.AddWithValue("@isCompleted", isCompleted);
 
-                //Get the created Id of the last inserted task
-                newID = (long)command.ExecuteScalar();
+                return Convert.ToInt32(command.ExecuteScalar());
             }
         }
         private void DeleteTaskFromDB(int taskID)
@@ -100,7 +97,9 @@ namespace TaskFlow.ViewModel
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = @"DELETE FROM tasks WHERE Id = @id;";
+                command.CommandText = @"DELETE FROM tasks 
+                                        WHERE Id = @id;
+                                        ";
                 command.Parameters.AddWithValue("@id", taskID);
                 command.ExecuteNonQuery();
             }
@@ -129,7 +128,7 @@ namespace TaskFlow.ViewModel
                 }
             }
         }
-        private void UpdateIsCompletedInDB(int isCompleted, int taskID)
+        private void UpdateIsCompletedInDB(bool isCompleted, int taskID)
         {
             using (var connection = new SqliteConnection("Data Source=app.db"))
             {

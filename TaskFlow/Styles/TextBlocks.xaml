@@ -24,6 +24,7 @@
         <Setter Property="Foreground" Value="{StaticResource LightGray}" />
         <Setter Property="FontFamily" Value="{StaticResource Afacad}" />
         <Setter Property="FontSize" Value="15" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding IsCompleted}" Value="True">
                 <Setter Property="TextDecorations" Value="Strikethrough" />

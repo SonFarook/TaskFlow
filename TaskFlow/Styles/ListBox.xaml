@@ -2,10 +2,14 @@
     <Style TargetType="{x:Type ListBox}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Width" Value="580" />
+        <Setter Property="Margin" Value="0,0,0,15" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Focusable" Value="False" />
     </Style>
 
     <Style TargetType="ListBoxItem">
-        <Setter Property="Margin" Value="0,5" />
+        <Setter Property="Margin" Value="0,10" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="BorderBrush" Value="Transparent" />
