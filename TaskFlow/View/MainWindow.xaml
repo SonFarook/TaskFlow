@@ -71,19 +71,13 @@
             Background="{StaticResource Green}"
             CornerRadius="15">
             <StackPanel Margin="0,7,0,0">
-                <RadioButton
-                    Margin="0,0,0,5"
-                    Click="RadioButton_Click_1"
-                    Style="{StaticResource MenuBtn}">
+                <RadioButton Click="RadioButton_Click_1" Style="{StaticResource MenuBtn}">
                     <Image Source="/Images/TasksIcon.png" />
                 </RadioButton>
-                <RadioButton
-                    Margin="0,0,0,5"
-                    Click="RadioButton_Click"
-                    Style="{StaticResource MenuBtn}">
+                <RadioButton Click="RadioButton_Click" Style="{StaticResource MenuBtn}">
                     <Image Source="/Images/CreateTaskIcon.png" />
                 </RadioButton>
-                <RadioButton Margin="0,0,0,5" Style="{StaticResource MenuBtn}">
+                <RadioButton Click="RadioButton_Click_2" Style="{StaticResource MenuBtn}">
                     <Image Source="/Images/PomodoroIcon.png" />
                 </RadioButton>
             </StackPanel>

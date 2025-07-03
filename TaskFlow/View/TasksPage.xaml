@@ -26,8 +26,7 @@
             <TextBlock
                 Grid.Row="0"
                 Margin="0,9,0,25"
-                HorizontalAlignment="Center"
-                FontSize="32"
+                Style="{StaticResource Header}"
                 Text="Tasks" />
 
             <!--  Header TextBlocks  -->

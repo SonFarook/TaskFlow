@@ -66,3 +66,6 @@ C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\runtimes\
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\View\PomodoroPage.g.cs
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\View\PomodoroPage.baml
+C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\obj\Debug\net8.0-windows\Styles\DrawingImages.baml

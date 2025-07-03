@@ -45,5 +45,11 @@ namespace TaskFlow.View
             var tasksPage = App.ServiceProvider.GetService<TasksPage>();
             MainFrame.Navigate(tasksPage);
         }
+
+        private void RadioButton_Click_2(object sender, RoutedEventArgs e)
+        {
+            var pomodoroPage = App.ServiceProvider.GetService<PomodoroPage>();
+            MainFrame.Navigate(pomodoroPage);
+        }
     }
 }

@@ -63,4 +63,10 @@
             </DataTrigger>
         </Style.Triggers>
     </Style>
+    <Style x:Key="Header" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource LightGray}" />
+        <Setter Property="FontFamily" Value="{StaticResource Afacad}" />
+        <Setter Property="FontSize" Value="32" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
 </ResourceDictionary>

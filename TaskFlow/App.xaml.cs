@@ -31,6 +31,7 @@ namespace TaskFlow
             services.AddTransient<CreateTaskViewModel>();
             services.AddTransient<TasksPage>();
             services.AddTransient<CreateTaskPage>();
+            services.AddTransient<PomodoroPage>();
         }
     }
 

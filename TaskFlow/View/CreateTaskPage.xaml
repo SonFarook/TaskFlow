@@ -22,8 +22,7 @@
         <StackPanel>
             <TextBlock
                 Margin="0,9,0,5"
-                HorizontalAlignment="Center"
-                FontSize="32"
+                Style="{StaticResource Header}"
                 Text="Create Task" />
             <TextBlock Margin="35,0,0,2" Text="Name" />
             <TextBox

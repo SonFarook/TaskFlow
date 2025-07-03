@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Skip  Break Icon  -->
+    <DrawingImage x:Key="SkipBreakIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="0.1,0,0,-0.1,0,512">
+                    <GeometryDrawing Brush="{StaticResource LightGray}" Geometry="F1 M512,512z M0,0z M475,4277C369,4235 328,4141 378,4055 390,4036 637,3693 927,3293 1217,2893 1454,2562 1453,2558 1451,2554 1198,2213 890,1801 477,1249 327,1042 323,1016 311,942 367,863 447,841 498,826 1501,826 1552,840 1573,846 1603,862 1619,876 1663,912 2792,2472 2810,2520 2823,2555 2823,2565 2810,2600 2792,2648 1663,4208 1619,4244 1603,4258 1573,4274 1552,4280 1497,4295 514,4292 475,4277z" />
+                    <GeometryDrawing Brush="{StaticResource LightGray}" Geometry="F1 M512,512z M0,0z M2455,4278C2416,4264 2380,4236 2358,4202 2334,4166 2335,4094 2359,4054 2369,4037 2617,3694 2909,3292L3440,2561 2891,1827C2589,1423 2332,1078 2321,1059 2309,1040 2300,1012 2300,997 2300,929 2356,860 2428,840 2480,826 3482,826 3534,841 3555,847 3590,868 3611,888 3649,925 4758,2447 4785,2501 4804,2537 4804,2583 4785,2619 4758,2673 3649,4195 3611,4232 3590,4252 3555,4273 3534,4279 3481,4294 2497,4293 2455,4278z" />
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

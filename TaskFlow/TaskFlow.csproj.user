@@ -5,6 +5,9 @@
     <Compile Update="View\CreateTaskPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PomodoroPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\TasksPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
