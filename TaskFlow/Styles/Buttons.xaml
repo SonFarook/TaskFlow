@@ -142,4 +142,17 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style
+        x:Key="SkipTimerBtn"
+        BasedOn="{StaticResource DeleteTaskBtn}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Visibility" Value="Hidden" />
+        <Setter Property="Margin" Value="0,25,0,0" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <Setter Property="Visibility" Value="Visible" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

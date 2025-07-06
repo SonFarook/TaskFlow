@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\viewmodel\\pomodoroviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\viewmodel\\pomodoroviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\model\\timermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\model\\timermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\view\\pomodoropage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\pomodoropage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\view\\pomodoropage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\pomodoropage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\styles\\buttons.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\styles\\buttons.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|c:\\users\\\u00F6mer\\source\\repos\\taskflow\\taskflow\\view\\pomodoropage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{E22B8A68-4BD2-40DF-B533-04F202723B82}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\view\\pomodoropage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,67 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\App.xaml",
-              "RelativeDocumentMoniker": "TaskFlow\\App.xaml",
-              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\App.xaml",
-              "RelativeToolTip": "TaskFlow\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-03T09:51:44.269Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Buttons.xaml",
-              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Styles\\Buttons.xaml",
-              "RelativeDocumentMoniker": "TaskFlow\\Styles\\Buttons.xaml",
-              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Styles\\Buttons.xaml",
-              "RelativeToolTip": "TaskFlow\\Styles\\Buttons.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-03T09:40:14.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "TaskFlow\\ViewModel\\MainViewModel.cs",
-              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\MainViewModel.cs",
-              "RelativeToolTip": "TaskFlow\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T08:54:16.411Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PomodoroPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\PomodoroPage.xaml.cs",
-              "RelativeDocumentMoniker": "TaskFlow\\View\\PomodoroPage.xaml.cs",
-              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\PomodoroPage.xaml.cs",
-              "RelativeToolTip": "TaskFlow\\View\\PomodoroPage.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwCAAAAAmAAAAAAAAAA==",
+              "Title": "TimerModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Model\\TimerModel.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\Model\\TimerModel.cs",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\Model\\TimerModel.cs",
+              "RelativeToolTip": "TaskFlow\\Model\\TimerModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T08:46:46.462Z",
+              "WhenOpened": "2025-07-06T08:56:03.484Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PomodoroViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\PomodoroViewModel.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\ViewModel\\PomodoroViewModel.cs",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\ViewModel\\PomodoroViewModel.cs",
+              "RelativeToolTip": "TaskFlow\\ViewModel\\PomodoroViewModel.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAewJsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T11:29:59.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PomodoroPage.xaml",
               "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\PomodoroPage.xaml",
               "RelativeDocumentMoniker": "TaskFlow\\View\\PomodoroPage.xaml",
               "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\PomodoroPage.xaml",
               "RelativeToolTip": "TaskFlow\\View\\PomodoroPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-03T06:47:17.921Z",
+              "WhenOpened": "2025-07-04T08:41:29.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PomodoroPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\PomodoroPage.xaml.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\View\\PomodoroPage.xaml.cs",
+              "ToolTip": "C:\\Users\\\u00D6mer\\source\\repos\\TaskFlow\\TaskFlow\\View\\PomodoroPage.xaml.cs",
+              "RelativeToolTip": "TaskFlow\\View\\PomodoroPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T08:40:48.81Z",
               "EditorCaption": ""
             }
           ]

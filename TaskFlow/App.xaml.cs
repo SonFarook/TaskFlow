@@ -28,6 +28,7 @@ namespace TaskFlow
             services.AddSingleton<MainWindow>();
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<TasksViewModel>();
+            services.AddSingleton<PomodoroViewModel>();
             services.AddTransient<CreateTaskViewModel>();
             services.AddTransient<TasksPage>();
             services.AddTransient<CreateTaskPage>();

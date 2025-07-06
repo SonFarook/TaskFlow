@@ -46,14 +46,10 @@
                     StrokeThickness="20">
                     <Path.Data>
                         <PathGeometry>
-                            <PathFigure
-                                x:Name="progressFigure"
-                                IsClosed="False"
-                                StartPoint="110, 10">
+                            <PathFigure IsClosed="False" StartPoint="110, 10">
                                 <ArcSegment
-                                    x:Name="progressArc"
-                                    IsLargeArc="False"
-                                    Point="110, 10"
+                                    IsLargeArc="{Binding IsLargeArc}"
+                                    Point="{Binding ArcPoint}"
                                     Size="100, 100"
                                     SweepDirection="Clockwise" />
                             </PathFigure>
@@ -63,13 +59,12 @@
 
                 <!--  Timer-Text  -->
                 <TextBlock
-                    Name="timerText"
                     Grid.Row="1"
                     Grid.RowSpan="2"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="54"
-                    Text="25:00">
+                    Text="{Binding TimerText}">
                     <TextBlock.Effect>
                         <DropShadowEffect
                             Direction="240"
@@ -79,9 +74,9 @@
                 </TextBlock>
                 <Button
                     Grid.Row="2"
-                    Margin="0,25,0,0"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource DeleteTaskBtn}">
+                    Command="{Binding SkipTimerCommand}"
+                    Style="{StaticResource SkipTimerBtn}"
+                    Tag="{Binding ShowSkipTimerBtn}">
                     <Image Width="15" Source="{StaticResource SkipBreakIcon}">
                         <Image.Effect>
                             <DropShadowEffect
@@ -94,7 +89,8 @@
             </Grid>
             <Button
                 Margin="0,0,0,15"
-                Content="Start"
+                Command="{Binding ToggleTimerCommand}"
+                Content="{Binding ToggleTimerBtnText}"
                 Style="{StaticResource SubmitBtn}" />
         </StackPanel>
     </Border>
