@@ -53,7 +53,7 @@ namespace TaskFlow.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TaskFlow;V1.0.0.0;component/view/pomodoropage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TaskFlow;component/view/pomodoropage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\PomodoroPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -11,16 +11,31 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using TaskFlow.Model;
 using System.Windows;
+using System.Diagnostics;
 
 namespace TaskFlow.ViewModel
 {
     public class PomodoroViewModel : INotifyPropertyChanged
     {
-        TimeSpan CurrentSessionDuration;
+        // Constants defining the geometry of the circular progress bar.
+        private const double ArcCenterX = 110;
+        private const double ArcCenterY = 110;
+        private const double ArcRadius = 100;
+        // The starting point of the arc (top-middle of the circle).
+        private static readonly Point ArcStartPosition = new(ArcCenterX, ArcCenterY - ArcRadius);
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         public ICommand ToggleTimerCommand { get; set; }
         public ICommand SkipTimerCommand { get; set; }
-        private readonly PomodoroTimer _timer;
+
+        // Stores the total time passed in the session, accumulated across pauses.
+        private TimeSpan _elapsedTime;
+        // Stores the exact timestamp when the timer was last started or resumed.
+        private DateTime _lastStartTime;
+        private readonly PomodoroEngine _engine;
+        private readonly DispatcherTimer _timer;
+
         private string _timerText;
         public string TimerText
         {
@@ -35,17 +50,17 @@ namespace TaskFlow.ViewModel
             }
         }
         private string _toggleTimerBtnText;
-        public string ToggleTimerBtnText 
-        { 
+        public string ToggleTimerBtnText
+        {
             get => _toggleTimerBtnText;
             set
             {
-                if (_toggleTimerBtnText != value) 
+                if (_toggleTimerBtnText != value)
                 {
                     _toggleTimerBtnText = value;
                     OnPropertyChanged();
                 }
-            } 
+            }
         }
         private Point _arcPoint;
         public Point ArcPoint
@@ -64,7 +79,7 @@ namespace TaskFlow.ViewModel
         public bool IsLargeArc
         {
             get => _isLargeArc;
-            set 
+            set
             {
                 if (_isLargeArc != value)
                 {
@@ -74,160 +89,138 @@ namespace TaskFlow.ViewModel
             }
         }
         private bool _showSkipTimerBtn;
-        public bool ShowSkipTimerBtn 
+        public bool ShowSkipTimerBtn
         {
             get => _showSkipTimerBtn;
-            set 
+            set
             {
-                if (_showSkipTimerBtn != value) 
+                if (_showSkipTimerBtn != value)
                 {
                     _showSkipTimerBtn = value;
                     OnPropertyChanged();
                 }
             }
         }
-       
-        public PomodoroViewModel() 
+        public PomodoroViewModel()
         {
             ToggleTimerCommand = new RelayCommand(ToggleTimerCommand_Executed);
             SkipTimerCommand = new RelayCommand(SkipTimerCommand_Executed);
-            _timer = new PomodoroTimer();
+
+            _engine = new PomodoroEngine();
+            _timer = new DispatcherTimer
+            {
+                // Set the timer to tick frequently for a smooth UI update.
+                Interval = TimeSpan.FromMilliseconds(500)
+            };
+            _timer.Tick += Timer_Tick;
+
+            // Set the initial state of the UI.
             SetDefaultValues();
         }
-
         private void Timer_Tick(object? sender, EventArgs e)
         {
-            TimeSpan remainingTime = _timer.GetRemainingTime();
+            // Calculate total elapsed time by adding previously accumulated time to the current running interval.
+            TimeSpan totalElapsed = _elapsedTime + (DateTime.Now - _lastStartTime);
+            TimeSpan remainingTime = _engine.CurrentSessionDuration - totalElapsed;
 
-            TimerText = remainingTime.ToString(@"mm\:ss");
+            // Update the circular progress bar based on the elapsed time.
+            UpdateProgress(totalElapsed, _engine.CurrentSessionDuration);
 
-            UpdateProgress(CurrentSessionDuration);
-
+            // Check if the current session has finished.
             if (remainingTime.TotalSeconds <= 0)
             {
-                _timer.IsBreakTime = !_timer.IsBreakTime;
-
-                if (!_timer.IsBreakTime)
-                {
-                    _timer.PomoCounter++; //only raise the counter, if a pomodoro (25min) timer ends
-                    TimerText = "25:00";
-                    CurrentSessionDuration = _timer.PomoTime;
-                }
-
-                else
-                    SetBreakValues();
-                
-                ResetTimer();
+                StopTimer();
+                PrepareNewSession();
+                return; // Exit the tick to prevent further updates in this cycle.
             }
+
+            // Update the displayed time text.
+            TimerText = remainingTime.ToString(@"mm\:ss");
         }
 
-        private void ToggleTimerCommand_Executed() 
+        private void ToggleTimerCommand_Executed()
         {
-            if (_timer.IsRunning) 
+            if (!_timer.IsEnabled)
             {
-                _timer.Stop();
-                ToggleTimerBtnText = "Start";
-            }
-
-            else
-            {
-                ShowSkipTimerBtn = true;
-                if (!_timer.GotClickedBefore)
-                    // if the button got clicked the first time, add one second (because the timer is dropping 1 second instantly)
-                    _timer.TimerStartTime = DateTime.Now + TimeSpan.FromSeconds(1) - _timer.ElapsedTime;
-                
-                else
-                    _timer.TimerStartTime = DateTime.Now - _timer.ElapsedTime;
-                
+                // Record the start time for the current interval.
+                _lastStartTime = DateTime.Now;
                 _timer.Start();
                 ToggleTimerBtnText = "Stop";
+                ShowSkipTimerBtn = true;
             }
-
-            _timer.IsRunning = !_timer.IsRunning;
-            _timer.GotClickedBefore = true;
-        }
-        private void SkipTimerCommand_Executed()
-        {
-            ResetTimer();
-            ArcPoint = new Point(110, 10);
-            if (_timer.IsBreakTime)
-            {
-                TimerText = "25:00";
-                CurrentSessionDuration = _timer.PomoTime;
-            }
-
             else
             {
-                _timer.PomoCounter++;
-                SetBreakValues();
-            }
+                // Add the time of the interval that just ended to our total elapsed time.
+                _elapsedTime += DateTime.Now - _lastStartTime;
 
-            _timer.IsBreakTime = !_timer.IsBreakTime;
+                // Stop the timer and update button states.
+                StopTimer();
+            }
         }
 
-        private void ResetTimer()
+        private void SkipTimerCommand_Executed()
         {
-            ToggleTimerBtnText = "Start";
+            StopTimer();
+            PrepareNewSession();
+        }
+
+        private void PrepareNewSession()
+        {
+            // Advance the engine to the next state (e.g., from work to break).
+            _engine.StartNextSession();
+
+            // CRITICAL: Reset the elapsed time for the new session.
+            _elapsedTime = TimeSpan.Zero;
+
+            // Update the UI text with the duration of the new session.
+            TimerText = _engine.CurrentSessionDuration.ToString(@"mm\:ss");
+
+            // Reset the progress arc to its starting position.
+            ArcPoint = ArcStartPosition;
+            IsLargeArc = false;
+        }
+
+        private void StopTimer()
+        {
             _timer.Stop();
-            _timer.GotClickedBefore = false;
-            _timer.IsRunning = false;
-            _timer.ElapsedTime = TimeSpan.FromSeconds(0);
             ShowSkipTimerBtn = false;
+            ToggleTimerBtnText = "Start";
         }
 
         private void SetDefaultValues()
         {
-            _timer.Interval = TimeSpan.FromMilliseconds(100);
-            _timer.Tick += Timer_Tick;
+            // Get the default session duration from the engine (25:00).
+            TimerText = _engine.CurrentSessionDuration.ToString(@"mm\:ss");
             ToggleTimerBtnText = "Start";
-            TimerText = "25:00";
-            ArcPoint = new Point(110, 10);
-            CurrentSessionDuration = _timer.PomoTime;
-        }
-        private void SetBreakValues()
-        {
-            if (_timer.PomoCounter % 4 == 0)
-            {
-                TimerText = "15:00";
-                CurrentSessionDuration = _timer.LongBreakTime;
-            }
 
-            else
-            {
-                TimerText = "05:00";
-                CurrentSessionDuration = _timer.ShortBreakTime;
-            }
+            // Reset the progress arc and hide the skip button.
+            ArcPoint = ArcStartPosition;
+            IsLargeArc = false;
+            ShowSkipTimerBtn = false;
         }
 
-        private void UpdateProgress(TimeSpan currentTimer)
+        private void UpdateProgress(TimeSpan elapsedTime, TimeSpan currentSession)
         {
-            double progress = _timer.ElapsedTime.TotalSeconds / currentTimer.TotalSeconds;
+            // Calculate progress as a value between 0.0 and 1.0.
+            double progress = elapsedTime.TotalSeconds / currentSession.TotalSeconds;
+            if (progress < 0) progress = 0;
+            // Cap the progress just below 1.0 to prevent a full 360-degree arc, which might not render correctly.
+            if (progress >= 1.0) progress = 0.9999;
 
+            // Convert progress percentage to an angle in degrees.
             double angle = progress * 360;
 
-            if (progress <= 0)
-            {
-                ArcPoint = new Point(110,10);
-                IsLargeArc = false;
-                return;
-            }
+            // Convert angle to radians and calculate the X, Y coordinates on the circle.
+            Point center = new Point(ArcCenterX, ArcCenterY);
+            double angleRad = (Math.PI / 180.0) * (angle - 90); // -90 degrees to start from the top.
 
-            if (progress >= 1.0)
-            {
-                angle = 359.99;
-            }
+            double x = center.X + ArcRadius * Math.Cos(angleRad);
+            double y = center.Y + ArcRadius * Math.Sin(angleRad);
 
-            Point center = new Point(110, 110);
-            double radius = 100;
-
-            double angleRad = (Math.PI / 180.0) * (angle - 90);
-
-            double x = center.X + radius * Math.Cos(angleRad);
-            double y = center.Y + radius * Math.Sin(angleRad);
-
+            // Update the UI properties.
             ArcPoint = new Point(x, y);
             IsLargeArc = angle > 180;
-        } 
+        }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

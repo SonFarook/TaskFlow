@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 C:\Users\Ömer\source\repos\TaskFlow\TaskFlow\App.xaml
 15-85354341
 
-17-667509010
+171221333153
 206-90261429
 Styles\Buttons.xaml;Styles\CheckBox.xaml;Styles\Colors.xaml;Styles\ComboBox.xaml;Styles\DatePicker.xaml;Styles\DrawingImages.xaml;Styles\Fonts.xaml;Styles\ListBox.xaml;Styles\ScrollBar.xaml;Styles\TextBlocks.xaml;Styles\TextBox.xaml;View\CreateTaskPage.xaml;View\MainWindow.xaml;View\PomodoroPage.xaml;View\TasksPage.xaml;
 
-True
+False
 
