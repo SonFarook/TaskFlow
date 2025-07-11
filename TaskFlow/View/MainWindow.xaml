@@ -16,9 +16,6 @@
     ResizeMode="NoResize"
     WindowStyle="None"
     mc:Ignorable="d">
-    <Window.DataContext>
-        <vm:MainViewModel />
-    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="22" />
@@ -110,9 +107,27 @@
             <!--  Everyday 1% Better Text  -->
 
             <TextBlock
+                Grid.Column="0"
                 Margin="11,12,13,0"
                 FontSize="16"
                 Text="everyday 1% better" />
+
+            <!--  Pomodoro Timer Text  -->
+
+            <TextBlock
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="24"
+                Text="{Binding TimerText}">
+                <TextBlock.Effect>
+                    <DropShadowEffect
+                        Direction="240"
+                        Opacity="0.6"
+                        ShadowDepth="3" />
+                </TextBlock.Effect>
+            </TextBlock>
+
 
 
             <!--  Date Time  -->

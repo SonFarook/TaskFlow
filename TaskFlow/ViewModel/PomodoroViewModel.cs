@@ -1,17 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
 using TaskFlow.Model;
 using System.Windows;
-using System.Diagnostics;
+using CommunityToolkit.Mvvm.Messaging;
+using TaskFlow.Messages;
 
 namespace TaskFlow.ViewModel
 {
@@ -110,7 +105,7 @@ namespace TaskFlow.ViewModel
             _timer = new DispatcherTimer
             {
                 // Set the timer to tick frequently for a smooth UI update.
-                Interval = TimeSpan.FromMilliseconds(500)
+                Interval = TimeSpan.FromMilliseconds(100)
             };
             _timer.Tick += Timer_Tick;
 
@@ -136,6 +131,7 @@ namespace TaskFlow.ViewModel
 
             // Update the displayed time text.
             TimerText = remainingTime.ToString(@"mm\:ss");
+            WeakReferenceMessenger.Default.Send(new TimerTextChangedMessage(TimerText));
         }
 
         private void ToggleTimerCommand_Executed()
@@ -162,6 +158,7 @@ namespace TaskFlow.ViewModel
         {
             StopTimer();
             PrepareNewSession();
+            WeakReferenceMessenger.Default.Send(new TimerTextChangedMessage(TimerText));
         }
 
         private void PrepareNewSession()
@@ -174,6 +171,7 @@ namespace TaskFlow.ViewModel
 
             // Update the UI text with the duration of the new session.
             TimerText = _engine.CurrentSessionDuration.ToString(@"mm\:ss");
+            WeakReferenceMessenger.Default.Send(new TimerTextChangedMessage(TimerText));
 
             // Reset the progress arc to its starting position.
             ArcPoint = ArcStartPosition;

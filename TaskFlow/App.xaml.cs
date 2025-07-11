@@ -17,19 +17,22 @@ namespace TaskFlow
             ConfigureServices(serviceCollection);
 
             ServiceProvider = serviceCollection.BuildServiceProvider();
-
+            
             ServiceProvider.GetService<TasksViewModel>();
+
+            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
+            mainWindow.Show();
 
             base.OnStartup(e);
         }
 
         private void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<MainWindow>();
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<TasksViewModel>();
             services.AddSingleton<PomodoroViewModel>();
             services.AddTransient<CreateTaskViewModel>();
+            services.AddTransient<MainWindow>();
             services.AddTransient<TasksPage>();
             services.AddTransient<CreateTaskPage>();
             services.AddTransient<PomodoroPage>();

@@ -9,6 +9,8 @@ using System.Windows.Input;
 using TaskFlow.View;
 using TaskFlow.Commands;
 using System.Windows.Threading;
+using CommunityToolkit.Mvvm.Messaging;
+using TaskFlow.Messages;
 
 namespace TaskFlow.ViewModel
 {
@@ -43,6 +45,32 @@ namespace TaskFlow.ViewModel
                 }   
             }
         }
+        private string _timerText;
+        public string TimerText
+        {
+            get => _timerText;
+            set
+            {
+                if (_timerText != value) 
+                {
+                    _timerText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private bool _isTimerRunning;
+        public bool IsTimerRunning
+        {
+            get => _isTimerRunning;
+            set
+            {
+                if (_isTimerRunning != value) 
+                {
+                    _isTimerRunning = value;
+                    OnPropertyChanged();
+                }
+            }    
+        }
 
         public MainViewModel()
         {
@@ -50,6 +78,11 @@ namespace TaskFlow.ViewModel
             {
                 InitAndStartTimer();
             }
+
+            WeakReferenceMessenger.Default.Register<TimerTextChangedMessage>(this, (r, m) =>
+            {
+                TimerText = m.Value;
+            });
         }
 
         private void InitAndStartTimer()
