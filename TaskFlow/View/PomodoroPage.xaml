@@ -57,6 +57,13 @@
                     </Path.Data>
                 </Path>
 
+                <!--  Pomodoro Counter  -->
+                <TextBlock
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    Foreground="{StaticResource Green}"
+                    Text="{Binding PomoCounterText}" />
+
                 <!--  Timer-Text  -->
                 <TextBlock
                     Grid.Row="1"
@@ -72,6 +79,8 @@
                             ShadowDepth="3" />
                     </TextBlock.Effect>
                 </TextBlock>
+
+                <!--  Skip Current Session Button  -->
                 <Button
                     Grid.Row="2"
                     Command="{Binding SkipTimerCommand}"
@@ -87,6 +96,8 @@
                     </Image>
                 </Button>
             </Grid>
+
+            <!--  Toggle Timer Button  -->
             <Button
                 Margin="0,0,0,15"
                 Command="{Binding ToggleTimerCommand}"

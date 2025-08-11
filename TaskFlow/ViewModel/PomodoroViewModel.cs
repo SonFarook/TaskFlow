@@ -96,6 +96,19 @@ namespace TaskFlow.ViewModel
                 }
             }
         }
+        private string _pomoCounterText;
+        public string PomoCounterText
+        {
+            get => _pomoCounterText;
+            set 
+            {
+                if (_pomoCounterText != value)
+                {
+                    _pomoCounterText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         public PomodoroViewModel()
         {
             ToggleTimerCommand = new RelayCommand(ToggleTimerCommand_Executed);
@@ -131,6 +144,8 @@ namespace TaskFlow.ViewModel
 
             // Update the displayed time text.
             TimerText = remainingTime.ToString(@"mm\:ss");
+
+            //Send the remaining time to MainVM
             WeakReferenceMessenger.Default.Send(new TimerTextChangedMessage(TimerText));
         }
 
@@ -165,12 +180,17 @@ namespace TaskFlow.ViewModel
         {
             // Advance the engine to the next state (e.g., from work to break).
             _engine.StartNextSession();
+            
+            // Update the Pomocounter Text in the UI
+            PomoCounterText = "#" + (_engine.PomoCounter).ToString();
 
             // CRITICAL: Reset the elapsed time for the new session.
             _elapsedTime = TimeSpan.Zero;
 
             // Update the UI text with the duration of the new session.
             TimerText = _engine.CurrentSessionDuration.ToString(@"mm\:ss");
+
+            //Send the remaining time to MainVM
             WeakReferenceMessenger.Default.Send(new TimerTextChangedMessage(TimerText));
 
             // Reset the progress arc to its starting position.
@@ -190,6 +210,7 @@ namespace TaskFlow.ViewModel
             // Get the default session duration from the engine (25:00).
             TimerText = _engine.CurrentSessionDuration.ToString(@"mm\:ss");
             ToggleTimerBtnText = "Start";
+            PomoCounterText = "#1";
 
             // Reset the progress arc and hide the skip button.
             ArcPoint = ArcStartPosition;
